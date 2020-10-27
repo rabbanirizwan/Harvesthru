@@ -8,14 +8,15 @@ const ProductTypes = ({ options, products }) => {
     //console.log(options != "deliveryTypes")
     const item = products.map((val, index) => {
         return (
-            <TouchableOpacity key={index}>
+            <TouchableOpacity key={index} >
                 <Image
                     resizeMethod="resize"
                     resizeMode="contain"
                     source={val.img}
                     style={{
                         height: options == "productTypes" ? screenWidth / 5 : screenWidth / 3.5,
-                        width: options == "productTypes" ? screenWidth / 5 : screenWidth / 3.5
+                        width: options == "productTypes" ? screenWidth / 5 : screenWidth / 3.5,
+                        
                     }}
                 />
             </TouchableOpacity>

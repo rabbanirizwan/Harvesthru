@@ -10,16 +10,25 @@ import PreviewScreenPresenter from '../screens/PreviewScreen/PreviewScreenPresen
 const Stack = createStackNavigator();
 
 const StackScreen = () => {
+//     const routesLength = useNavigationState(state => state.routes.length);
+// console.log('routesLength', routesLength);
     return (
         <Stack.Navigator
-        initialRouteName="previewScreen"
-            screenOptions={{
+        initialRouteName="ProductDetailOne"
+            screenOptions={({navigation})=>({
                 headerStyle: {
                     elevation: 0,
                     shadowOpacity: 0,
                 },
                 headerLeft: () => (
-                    <TouchableOpacity style={{ paddingLeft: 20 }}>
+                    <TouchableOpacity onPress={()=>{
+                        if(navigation.canGoBack()){
+                            navigation.goBack()
+                        }else{
+
+                        }
+                       
+                        }} style={{ paddingLeft: 20 }}>
                         <Image
                             resizeMethod="resize"
                             resizeMode="contain"
@@ -29,11 +38,13 @@ const StackScreen = () => {
                     </TouchableOpacity>
                 ),
                 headerRight: () => (
-                    <TouchableOpacity style={{ paddingRight: 20 }}>
+                    <TouchableOpacity 
+                    onPress={()=>navigation.canGoBack() && navigation.popToTop()}
+                    style={{ paddingRight: 20 }}>
                         <Text>Exit</Text>
                     </TouchableOpacity>
                 )
-            }}
+            })}
         >
             <Stack.Screen name="ProductDetailOne" component={ProductDetailContainer} options={{ title: "Product Details" }}/>
             <Stack.Screen name="productTwo" component={ProductDetailOne} options={{ title: "Product Details" }}/>

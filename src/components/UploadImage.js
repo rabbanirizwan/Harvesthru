@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-nat
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
-const UploadImage = () => {
+const UploadImage = ({navigation}) => {
     return (
         <TouchableOpacity>
             <Image

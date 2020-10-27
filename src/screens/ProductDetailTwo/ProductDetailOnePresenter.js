@@ -5,7 +5,7 @@ import LoadingBar from '../../components/LoadingBar'
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
-const ProductDetailOne = () => {
+const ProductDetailOne = ({navigation}) => {
     return (
         <SafeAreaView style={styles.parent}>
             <LoadingBar option={1} loading="two" />
@@ -30,7 +30,7 @@ const ProductDetailOne = () => {
             <View></View>
             <View></View>
             <View></View>
-            <NextButton/>
+            <NextButton navigation={navigation} screen="uploadImage" />
         </SafeAreaView>
     )
 }

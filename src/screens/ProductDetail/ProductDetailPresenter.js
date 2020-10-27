@@ -19,7 +19,7 @@ const deliveryOptions = [
     { img: require("../../assets/images/pickup.png") },
 
 ]
-const ProductDetailPresenter = () => {
+const ProductDetailPresenter = ({navigation}) => {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
@@ -30,7 +30,7 @@ const ProductDetailPresenter = () => {
                 <LoadingBar option={1} loading="one"/>
                 <View style={styles.productName} >
                     <Text style={styles.textName}>Produce Name</Text>
-                    <TextInput />
+                    <TextInput style={{paddingLeft:30}} />
                 </View>
                 <ToggleSwitch
                     isOn={isEnabled}
@@ -48,7 +48,7 @@ const ProductDetailPresenter = () => {
                 <Text style={styles.deliveryOptionText}>Delivery Options</Text>
                 <Text style={styles.selectText}>(can select several)</Text>
                 <ProductTypes option="deliveryTypes" products={deliveryOptions} />
-                <NextButton />
+                <NextButton navigation={navigation} screen="productTwo" />
             </ScrollView>
 
         </SafeAreaView>

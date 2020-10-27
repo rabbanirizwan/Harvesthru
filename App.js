@@ -19,10 +19,10 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import StackScreen from './src/navigation/StackNavigator';
 
-const App: () => React$Node = () => {
+const App= (props) => {
   return (
     <NavigationContainer>
-      <StackScreen/>
+      <StackScreen navigation={props.navigation}/>
     </NavigationContainer>
   );
 };

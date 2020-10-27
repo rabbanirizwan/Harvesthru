@@ -4,12 +4,12 @@ import NextButton from '../../components/Button'
 import LoadingBar from '../../components/LoadingBar'
 import UploadImage from '../../components/UploadImage'
 
-const UploadImagePresenter = () =>{
+const UploadImagePresenter = ({navigation}) =>{
     return(
       <SafeAreaView style={styles.parent}>
            <LoadingBar option={2} loading="three"/>
            <UploadImage/>
-           <NextButton/>
+           <NextButton navigation={navigation} screen="reviewScreen"/>
       </SafeAreaView>
     )
 }

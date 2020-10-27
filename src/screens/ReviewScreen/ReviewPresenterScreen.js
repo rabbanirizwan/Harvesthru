@@ -13,7 +13,7 @@ const BoxShadow = styled.View`
 `
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
-const ReviewPresenter = () => {
+const ReviewPresenter = ({navigation}) => {
     return (
         <SafeAreaView style={styles.parent}>
             <View style={styles.loading}>
@@ -34,7 +34,9 @@ const ReviewPresenter = () => {
             </BoxShadow>
             <ProductCard />
             <View style={styles.footer}>
-                <TouchableOpacity style={[styles.previewButton, { height: screenHeight / 15 }]}>
+                <TouchableOpacity 
+                onPress={()=>navigation.push("previewScreen")}
+                style={[styles.previewButton, { height: screenHeight / 15 }]}>
                     <Text style={styles.previewText}>Preview</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.publishButton, { height: screenHeight / 15 }]}>
