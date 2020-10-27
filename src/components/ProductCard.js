@@ -7,27 +7,27 @@ const ProductCard = () =>{
     return(
       <View style={styles.parent}>
         <View style={styles.row}>
-            <Text style={[styles.heading,{width:170}]}>Produce Name</Text>
-            <Text style={[styles.desc,{width:100}]}>Fuji Apples</Text>
+            <Text style={[styles.heading,{width:150}]}>Produce Name</Text>
+            <Text style={[styles.desc,{width:120}]}>Fuji Apples</Text>
         </View>
         <View style={styles.row}>
-            <Text style={[styles.heading,{width:170}]}>Type of Produce</Text>
-            <Text style={[styles.desc,{width:100}]}>Fruits</Text>
+            <Text style={[styles.heading,{width:150}]}>Type of Produce</Text>
+            <Text style={[styles.desc,{width:120}]}>Fruits</Text>
         </View>
         <View style={styles.row}>
-            <Text style={[styles.heading,{width:170}]}>Pricing</Text>
-            <Text style={[styles.desc,{width:100}]}>$2 / lb</Text>
+            <Text style={[styles.heading,{width:150}]}>Pricing</Text>
+            <Text style={[styles.desc,{width:120}]}>$2 / lb</Text>
         </View>
         <View style={styles.row}>
-            <Text style={[styles.heading,{width:170}]}>Quantity</Text>
-            <Text style={[styles.desc,{width:100}]}>20 lbs</Text>
+            <Text style={[styles.heading,{width:150}]}>Quantity</Text>
+            <Text style={[styles.desc,{width:120}]}>20 lbs</Text>
         </View>
         <View style={styles.row}>
-            <Text style={[styles.heading,{width:170}]}>Delivery Options</Text>
-            <Text style={[styles.desc,{width:100}]}>Pick Up, Harvest</Text>
+            <Text style={[styles.heading,{width:150}]}>Delivery Options</Text>
+            <Text style={[styles.desc,{width:120}]}>Pick Up, Harvest</Text>
         </View>
         <View style={styles.row}>
-            <Text style={[styles.heading,{width:170}]}>Description</Text>
+            <Text style={[styles.heading,{width:150}]}>Description</Text>
             <View style={{flexDirection:"row",alignItems:"center"}}>
                 <Image
                 resizeMode="contain"
@@ -35,7 +35,7 @@ const ProductCard = () =>{
                 source={require("../assets/images/exclamation.png")}
                 style={{height:20,width:20}}
                 />
-            <Text style={[styles.desc,{width:100,color:"#FF5876",fontWeight:"bold"}]}>Missing</Text>
+            <Text style={[styles.desc,{width:120,color:"#FF5876",  fontFamily:"Nunito-ExtraBold",paddingLeft:10}]}>Missing</Text>
             </View>
             
         </View>
@@ -57,13 +57,13 @@ row:{
    // backgroundColor:"pink",
  
     paddingHorizontal:10,
-    paddingVertical:10
+    paddingVertical:5
    
 },
 heading:{
     color:"#353535",
-    fontSize:16,
-    fontWeight:"bold",
+    fontSize:12,
+    fontFamily:"Nunito-ExtraBold",
     textAlign:"left",
   //  backgroundColor:"yellow",
     
@@ -72,9 +72,10 @@ heading:{
 desc:{
     color:"#353535",
     fontSize:12,
-    fontWeight:"200" ,
+    fontFamily:"Nunito-SemiBold",
     textAlign:"left",
-    paddingLeft:10
+    //paddingLeft:10,
+    //backgroundColor:"red"
    
    // backgroundColor:"red"
 }

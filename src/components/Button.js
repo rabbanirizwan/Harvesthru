@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     text: {
         color: "white",
         fontSize: 15,
-        fontWeight: "bold",
+        fontFamily:"Nunito-Bold",
         textAlign: "center"
     }
 })

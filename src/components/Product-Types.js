@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 14,
         color: "black",
-        paddingLeft: 15
+        paddingLeft: 15,
+        fontFamily:"Nunito-Regular"
     }
 })

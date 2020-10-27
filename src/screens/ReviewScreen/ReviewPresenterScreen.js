@@ -7,36 +7,45 @@ import ProductSilder from '../../components/product-slider'
 import ProductCard from '../../components/ProductCard'
 const BoxShadow = styled.View`
  box-shadow:0px 5px 15px red;
-  elevation: 3;
+  elevation: 8;
+  padding-vertical:10px;
+  background-color:white
+`
+const BoxShadowOne = styled.View`
+ box-shadow:0px 5px 15px red;
+  elevation: 8;
   padding-vertical:10px;
   background-color:white
 `
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
-const ReviewPresenter = ({navigation}) => {
+const ReviewPresenter = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.parent}>
             <View style={styles.loading}>
                 <LoadingBar option={2} loading="four" />
             </View>
 
-            <BoxShadow style={{ marginTop: 20 }}>
+            {/* <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "red" }}>
                 <Edit name="Photos" image={require("../../assets/images/checked.png")} />
-            </BoxShadow>
-
+            </BoxShadow> */}
+            <BoxShadowOne style={{ marginTop: 20 }}>
+                <Edit name="Photos" image={require("../../assets/images/checked.png")} />
+            </BoxShadowOne>
             <View style={{ height: 150 }}>
                 <ProductSilder />
             </View>
 
 
-            <BoxShadow style={{ marginTop: 0 }}>
+
+            <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
                 <Edit name="Product Details" image={require("../../assets/images/exclamation.png")} />
             </BoxShadow>
             <ProductCard />
             <View style={styles.footer}>
-                <TouchableOpacity 
-                onPress={()=>navigation.push("previewScreen")}
-                style={[styles.previewButton, { height: screenHeight / 15 }]}>
+                <TouchableOpacity
+                    onPress={() => navigation.push("previewScreen")}
+                    style={[styles.previewButton, { height: screenHeight / 15 }]}>
                     <Text style={styles.previewText}>Preview</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.publishButton, { height: screenHeight / 15 }]}>
@@ -68,11 +77,13 @@ const styles = StyleSheet.create({
     },
     previewText: {
         color: "#9ACD00",
-        fontSize: 15
+        fontSize: 15,
+        fontFamily:"Nunito-Regular"
     },
     publishText: {
         fontSize: 15,
-        color: "white"
+        color: "white",
+        fontFamily:"Nunito-Bold"
     },
     parent: {
         flex: 1,

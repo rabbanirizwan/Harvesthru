@@ -20,7 +20,7 @@ const Pricing = () => {
 
             </View>
             <View style={styles.unit}>
-                <Text style={{ color: "#979797", fontSize: 14, fontWeight: "600", paddingLeft: 5 }}> / lbs</Text>
+                <Text style={{ color: "#979797", fontSize: 14, fontFamily: "Nunito-SemiBold", paddingLeft: 5 }}> / lbs</Text>
                 <TouchableOpacity style={styles.dropdown}>
                     <Image
                         resizeMode="contain"
@@ -68,7 +68,9 @@ const styles = StyleSheet.create({
         top: -10,
         left: 20,
         backgroundColor: "white",
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        fontFamily: "Nunito-Regular",
+        fontSize: 14
     }
 
 })

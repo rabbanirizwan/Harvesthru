@@ -10,25 +10,26 @@ import PreviewScreenPresenter from '../screens/PreviewScreen/PreviewScreenPresen
 const Stack = createStackNavigator();
 
 const StackScreen = () => {
-//     const routesLength = useNavigationState(state => state.routes.length);
-// console.log('routesLength', routesLength);
+    //     const routesLength = useNavigationState(state => state.routes.length);
+    // console.log('routesLength', routesLength);
     return (
         <Stack.Navigator
-        initialRouteName="ProductDetailOne"
-            screenOptions={({navigation})=>({
+            initialRouteName="ProductDetailOne"
+            screenOptions={({ navigation }) => ({
                 headerStyle: {
                     elevation: 0,
                     shadowOpacity: 0,
+
                 },
                 headerLeft: () => (
-                    <TouchableOpacity onPress={()=>{
-                        if(navigation.canGoBack()){
+                    <TouchableOpacity onPress={() => {
+                        if (navigation.canGoBack()) {
                             navigation.goBack()
-                        }else{
+                        } else {
 
                         }
-                       
-                        }} style={{ paddingLeft: 20 }}>
+
+                    }} style={{ paddingLeft: 20 }}>
                         <Image
                             resizeMethod="resize"
                             resizeMode="contain"
@@ -38,19 +39,54 @@ const StackScreen = () => {
                     </TouchableOpacity>
                 ),
                 headerRight: () => (
-                    <TouchableOpacity 
-                    onPress={()=>navigation.canGoBack() && navigation.popToTop()}
-                    style={{ paddingRight: 20 }}>
-                        <Text>Exit</Text>
+                    <TouchableOpacity
+                        onPress={() => navigation.canGoBack() && navigation.popToTop()}
+                        style={{ paddingRight: 20 }}>
+                        <Text style={{fontSize:14,fontFamily:"Nunito-Regular"}}>Exit</Text>
                     </TouchableOpacity>
                 )
             })}
         >
-            <Stack.Screen name="ProductDetailOne" component={ProductDetailContainer} options={{ title: "Product Details" }}/>
-            <Stack.Screen name="productTwo" component={ProductDetailOne} options={{ title: "Product Details" }}/>
-            <Stack.Screen name="uploadImage" component={UploadImagePresenter} options={{ title: "Upload Photos" }}/>
-            <Stack.Screen name="reviewScreen" component={ReviewPresenter} options={{title: "Review"}}/>
-            <Stack.Screen name="previewScreen" component={PreviewScreenPresenter} options={{title: "Preview"}}/>
+            <Stack.Screen name="ProductDetailOne" component={ProductDetailContainer}
+                options={{
+                    title: "Product Details",
+                    headerTitleStyle: {
+                        fontFamily: 'Nunito-ExtraBold',
+                        fontSize: 16
+                    },
+                }} />
+            <Stack.Screen name="productTwo" component={ProductDetailOne}
+                options={{
+                    title: "Product Details",
+                    headerTitleStyle: {
+                        fontFamily: 'Nunito-ExtraBold',
+                        fontSize: 16
+                    },
+                }} />
+            <Stack.Screen name="uploadImage" component={UploadImagePresenter}
+                options={{
+                    title: "Upload Photos",
+                    headerTitleStyle: {
+                        fontFamily: 'Nunito-ExtraBold',
+                        fontSize: 16
+                    },
+                }} />
+            <Stack.Screen name="reviewScreen" component={ReviewPresenter}
+                options={{
+                    title: "Review",
+                    headerTitleStyle: {
+                        fontFamily: 'Nunito-ExtraBold',
+                        fontSize: 16
+                    },
+                }} />
+            <Stack.Screen name="previewScreen" component={PreviewScreenPresenter}
+                options={{
+                    title: "Preview",
+                    headerTitleStyle: {
+                        fontFamily: 'Nunito-ExtraBold',
+                        fontSize: 16
+                    },
+                }} />
         </Stack.Navigator>
     )
 }

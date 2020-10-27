@@ -5,7 +5,7 @@ import LoadingBar from '../../components/LoadingBar'
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
-const ProductDetailOne = ({navigation}) => {
+const ProductDetailOne = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.parent}>
             <LoadingBar option={1} loading="two" />
@@ -39,13 +39,15 @@ export default ProductDetailOne
 const styles = StyleSheet.create({
     textInput: {
         textAlignVertical: "top",
-        paddingHorizontal: 30
+        paddingHorizontal: 30,
+        fontFamily:"Nunito-Regular",
+        fontSize:12
     },
     parent: {
         backgroundColor: "white",
         flex: 1,
         paddingHorizontal: 10,
-        justifyContent:"space-between"
+        justifyContent: "space-between"
     },
     bulletpointContainer: {
         marginVertical: 10
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
         marginVertical: 30
     },
     desc: {
-        fontWeight: "700",
+        fontFamily: "Nunito-SemiBold",
         fontSize: 13,
         color: "#4A4A4A",
 
@@ -64,13 +66,14 @@ const styles = StyleSheet.create({
     bulletpoint: {
         color: "#666666",
         fontSize: 13,
+        fontFamily:"Nunito-Regular"
 
     },
     productName: {
         borderWidth: 1,
         borderColor: "#DADADA",
         borderRadius: 10,
-        marginHorizontal:10
+        marginHorizontal: 10
         // marginTop: 50,
         // marginBottom: 30
         //flex:1
@@ -81,6 +84,7 @@ const styles = StyleSheet.create({
         left: 20,
         backgroundColor: "white",
         paddingHorizontal: 10,
-        fontSize:14
+        fontSize: 14,
+        fontFamily:"Nunito-Regular"
     }
 })

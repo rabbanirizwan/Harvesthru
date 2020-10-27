@@ -28,8 +28,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 14,
         color: "#353535",
-        fontWeight: "bold",
-        fontFamily: "Nunito",
+        fontFamily: "Nunito-ExtraBold",
 
     },
     parent: {

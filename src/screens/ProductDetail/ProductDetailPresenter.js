@@ -37,7 +37,7 @@ const ProductDetailPresenter = ({navigation}) => {
                     label="Organic"
                     thumbOnStyle={{ paddingHorizontal: 13 }}
                     thumbOffStyle={{ paddingHorizontal: 13 }}
-                    labelStyle={{ color: "black", fontSize: 14, paddingLeft:5,paddingRight:40, color: "#4A4A4A" }}
+                    labelStyle={{ color: "black", fontSize: 14, paddingLeft:5,paddingRight:40, color: "#4A4A4A",fontFamily:"Nunito-Regular",fontSize:14 }}
                     trackOnStyle={{ backgroundColor: "#9ACD00", width: 55 }}
                     trackOffStyle={{ backgroundColor: "#E5E5E5", width: 55 }}
                     size="medium"
@@ -60,13 +60,15 @@ const styles = StyleSheet.create({
     deliveryOptionText: {
         fontSize: 14,
         color: "black",
-        paddingLeft:15
+        paddingLeft:15,
+        fontFamily: "Nunito-Regular",
     },
     selectText: {
         color: "#979797",
         fontSize: 12,
         paddingLeft:15,
-        marginTop:10
+        marginTop:5,
+        fontFamily: "Nunito-Regular",
     },
     scrollview: {
         justifyContent: "flex-start",
@@ -88,6 +90,8 @@ const styles = StyleSheet.create({
         //flex:1
     },
     textName: {
+        fontFamily: "Nunito-Regular",
+        fontSize:14,
         position: "absolute",
         top: -10,
         left: 20,
