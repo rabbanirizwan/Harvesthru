@@ -1,18 +1,18 @@
 import React from 'react'
-import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
+import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Dimensions,Platform} from 'react-native'
 import Edit from '../../components/edit'
 import LoadingBar from '../../components/LoadingBar'
 import styled from 'styled-components/native'
 import ProductSilder from '../../components/product-slider'
 import ProductCard from '../../components/ProductCard'
 const BoxShadow = styled.View`
- box-shadow:0px 5px 15px red;
+ box-shadow:0px 8px 8px silver;
   elevation: 8;
   padding-vertical:10px;
   background-color:white
 `
 const BoxShadowOne = styled.View`
- box-shadow:0px 5px 15px red;
+ box-shadow:0px 10px 8px silver;
   elevation: 8;
   padding-vertical:10px;
   background-color:white
@@ -26,21 +26,21 @@ const ReviewPresenter = ({ navigation }) => {
                 <LoadingBar option={2} loading="four" />
             </View>
 
-            {/* <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "red" }}>
-                <Edit name="Photos" image={require("../../assets/images/checked.png")} />
-            </BoxShadow> */}
-            <BoxShadowOne style={{ marginTop: 20 }}>
-                <Edit name="Photos" image={require("../../assets/images/checked.png")} />
-            </BoxShadowOne>
-            <View style={{ height: 150 }}>
-                <ProductSilder />
-            </View>
+           
+                <BoxShadowOne style={ Platform.OS=="ios"?{ marginTop: 0 }:{marginTop:20}}>
+                    <Edit name="Photos" image={require("../../assets/images/checked.png")} />
+                </BoxShadowOne>
+                <View style={{ height: 150,}}>
+                    <ProductSilder />
+                </View>
 
 
 
-            <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
-                <Edit name="Product Details" image={require("../../assets/images/exclamation.png")} />
-            </BoxShadow>
+                <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
+                    <Edit name="Product Details" image={require("../../assets/images/exclamation.png")} />
+                </BoxShadow>
+            
+
             <ProductCard />
             <View style={styles.footer}>
                 <TouchableOpacity
@@ -78,12 +78,12 @@ const styles = StyleSheet.create({
     previewText: {
         color: "#9ACD00",
         fontSize: 15,
-        fontFamily:"Nunito-Regular"
+        fontFamily: "Nunito-Regular"
     },
     publishText: {
         fontSize: 15,
         color: "white",
-        fontFamily:"Nunito-Bold"
+        fontFamily: "Nunito-Bold"
     },
     parent: {
         flex: 1,

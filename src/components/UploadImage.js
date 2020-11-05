@@ -47,7 +47,7 @@ const UploadImage = ({navigation}) => {
       console.log(image)
     return (
         <TouchableOpacity
-         //onPress={()=>selectImage()}
+        onPress={()=>selectImage()}
          >
             <Image
                 resizeMethod="resize"

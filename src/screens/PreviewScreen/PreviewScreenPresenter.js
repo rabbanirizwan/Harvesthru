@@ -3,7 +3,7 @@ import { SafeAreaView, View, StyleSheet, Text, Image, Dimensions } from 'react-n
 import LoadingBar from '../../components/LoadingBar'
 import styled from 'styled-components/native'
 const BoxShadow = styled.View`
- box-shadow:0px 10px 5px silver;
+box-shadow:0px 8px 8px silver;
   elevation: 4;
   padding-vertical:10px;
   background-color:white;
