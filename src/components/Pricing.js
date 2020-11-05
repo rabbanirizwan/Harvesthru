@@ -15,7 +15,10 @@ const Pricing = () => {
                         source={require("../assets/images/dollar.png")}
                         style={{ height: 16, width: 16 }}
                     />
-                    <TextInput style={{ flex: 1 }} />
+                    <TextInput 
+                    style={{ flex: 1,borderWidth:0,paddingVertical:10 }}
+                     underlineColorAndroid="transparent" 
+                     keyboardType="number-pad"/>
                 </View>
 
             </View>

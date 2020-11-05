@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
         textAlignVertical: "top",
         paddingHorizontal: 30,
         fontFamily:"Nunito-Regular",
-        fontSize:12
+        fontSize:12,
+        borderWidth:0,paddingVertical:10 
     },
     parent: {
         backgroundColor: "white",

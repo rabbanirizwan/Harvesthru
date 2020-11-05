@@ -30,7 +30,7 @@ const ProductDetailPresenter = ({navigation}) => {
                 <LoadingBar option={1} loading="one"/>
                 <View style={styles.productName} >
                     <Text style={styles.textName}>Produce Name</Text>
-                    <TextInput style={{paddingLeft:30}} />
+                    <TextInput style={{paddingLeft:30,borderWidth:0,paddingVertical:10}}  underlineColorAndroid="transparent" />
                 </View>
                 <ToggleSwitch
                     isOn={isEnabled}
@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
         borderColor: "#DADADA",
         borderRadius: 10,
         marginTop: 50,
-        marginBottom: 30
+        marginBottom: 30,
+        
         //flex:1
     },
     textName: {

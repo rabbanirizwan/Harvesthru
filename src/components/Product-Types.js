@@ -14,8 +14,8 @@ const ProductTypes = ({ options, products }) => {
                     resizeMode="contain"
                     source={val.img}
                     style={{
-                        height: options == "productTypes" ? screenWidth / 5 : screenWidth / 3.5,
-                        width: options == "productTypes" ? screenWidth / 5 : screenWidth / 3.5,
+                        height: options == "productTypes" ? screenWidth / 5.5 : screenWidth / 3.5,
+                        width: options == "productTypes" ? screenWidth / 5.5 : screenWidth / 3.5,
                         
                     }}
                 />
@@ -25,12 +25,9 @@ const ProductTypes = ({ options, products }) => {
     return (
         <View style={options == "productTypes" ? styles.parent : { marginTop: 0 }}>
             {options == "productTypes" && <Text style={styles.text}>Type of Produce</Text>}
-            <ScrollView
-                contentContainerStyle={styles.parent}
-                showsHorizontalScrollIndicator={false}
-                horizontal={true}>
+            <View style={styles.parentOne}>
                 {item}
-            </ScrollView>
+            </View>
         </View>
 
     )
@@ -39,8 +36,14 @@ export default ProductTypes
 
 const styles = StyleSheet.create({
     parent: {
-        marginTop: 20
+        marginTop: 20,
+        
 
+    },
+    parentOne:{
+        marginTop: 20,
+        flexDirection:"row",
+        
     },
     text: {
         fontSize: 14,

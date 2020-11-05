@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Dimensions,Platform} from 'react-native'
+import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Dimensions, Platform } from 'react-native'
 import Edit from '../../components/edit'
 import LoadingBar from '../../components/LoadingBar'
 import styled from 'styled-components/native'
@@ -7,13 +7,13 @@ import ProductSilder from '../../components/product-slider'
 import ProductCard from '../../components/ProductCard'
 const BoxShadow = styled.View`
  box-shadow:0px 8px 8px silver;
-  elevation: 8;
+  elevation: 4.5;
   padding-vertical:10px;
   background-color:white
 `
 const BoxShadowOne = styled.View`
  box-shadow:0px 10px 8px silver;
-  elevation: 8;
+  elevation: 4.5;
   padding-vertical:10px;
   background-color:white
 `
@@ -25,12 +25,11 @@ const ReviewPresenter = ({ navigation }) => {
             <View style={styles.loading}>
                 <LoadingBar option={2} loading="four" />
             </View>
-
-           
-                <BoxShadowOne style={ Platform.OS=="ios"?{ marginTop: 0 }:{marginTop:20}}>
+            <View>
+                <BoxShadowOne style={{ borderTopWidth: 1, borderTopColor: "#E5E5E5"}}>
                     <Edit name="Photos" image={require("../../assets/images/checked.png")} />
                 </BoxShadowOne>
-                <View style={{ height: 150,}}>
+                <View style={{ height: screenWidth /2.2, paddingVertical: 5, }}>
                     <ProductSilder />
                 </View>
 
@@ -39,7 +38,10 @@ const ReviewPresenter = ({ navigation }) => {
                 <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
                     <Edit name="Product Details" image={require("../../assets/images/exclamation.png")} />
                 </BoxShadow>
-            
+
+            </View>
+
+
 
             <ProductCard />
             <View style={styles.footer}>
