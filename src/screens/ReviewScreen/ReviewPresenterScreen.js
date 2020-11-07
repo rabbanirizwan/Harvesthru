@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Dimensions, Platform } from 'react-native'
+import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Dimensions, Platform, ScrollView } from 'react-native'
 import Edit from '../../components/edit'
 import LoadingBar from '../../components/LoadingBar'
 import styled from 'styled-components/native'
@@ -22,38 +22,46 @@ const screenHeight = Math.round(Dimensions.get('window').height);
 const ReviewPresenter = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.parent}>
-            <View style={styles.loading}>
-                <LoadingBar option={2} loading="four" />
-            </View>
-            <View>
-                <BoxShadowOne style={{ borderTopWidth: 1, borderTopColor: "#E5E5E5"}}>
-                    <Edit name="Photos" image={require("../../assets/images/checked.png")} />
-                </BoxShadowOne>
-                <View style={{ height: screenWidth /2.2, paddingVertical: 5, }}>
-                    <ProductSilder />
+            <ScrollView
+                contentContainerStyle={{
+                    justifyContent: "space-between",
+                    backgroundColor: "white",
+                }}
+            >
+                <View style={styles.loading}>
+                    <LoadingBar option={2} loading="four" />
+                </View>
+                <View>
+                    <BoxShadowOne style={{ borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
+                        <Edit name="Photos" image={require("../../assets/images/checked.png")} />
+                    </BoxShadowOne>
+                    <View style={{ height: screenWidth / 2.2, paddingVertical: 5, }}>
+                        <ProductSilder />
+                    </View>
+
+
+
+                    <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
+                        <Edit name="Product Details" image={require("../../assets/images/exclamation.png")} />
+                    </BoxShadow>
+
                 </View>
 
 
 
-                <BoxShadow style={{ marginTop: 0, borderTopWidth: 1, borderTopColor: "#E5E5E5" }}>
-                    <Edit name="Product Details" image={require("../../assets/images/exclamation.png")} />
-                </BoxShadow>
+                <ProductCard />
+                <View style={styles.footer}>
+                    <TouchableOpacity
+                        onPress={() => navigation.push("previewScreen")}
+                        style={[styles.previewButton, { height: screenHeight / 15 }]}>
+                        <Text style={styles.previewText}>Preview</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.publishButton, { height: screenHeight / 15 }]}>
+                        <Text style={styles.publishText}>Publish</Text>
+                    </TouchableOpacity>
+                </View>
 
-            </View>
-
-
-
-            <ProductCard />
-            <View style={styles.footer}>
-                <TouchableOpacity
-                    onPress={() => navigation.push("previewScreen")}
-                    style={[styles.previewButton, { height: screenHeight / 15 }]}>
-                    <Text style={styles.previewText}>Preview</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.publishButton, { height: screenHeight / 15 }]}>
-                    <Text style={styles.publishText}>Publish</Text>
-                </TouchableOpacity>
-            </View>
+            </ScrollView>
 
         </SafeAreaView>
     )
@@ -91,6 +99,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-between",
         backgroundColor: "white",
+       // height:screenHeight/1.11
         //paddingHorizontal:10
     },
     loading: {

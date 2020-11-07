@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Image, Text, StyleSheet, FlatList, TouchableOpacity,Dimensions } from 'react-native'
+import { View, Image, Text, StyleSheet, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 
 
 const screenWidth = Math.round(Dimensions.get('window').width);
@@ -14,16 +14,16 @@ const Product = [{ img: require("../assets/images/apple.png"), set: true },
 ]
 const ProductSilder = () => {
     const [active, setActive] = useState(false)
-    const [arrayData,setArray] = useState(Product)
+    const [arrayData, setArray] = useState(Product)
 
-    const onClick = (index) =>{
+    const onClick = (index) => {
         //console.log(index)
-        let arrayList =[...Product]
-       // arrayList[index].set = true
-        arrayList.map((val,id)=>id == index ? val.set=true:val.set = false )
+        let arrayList = [...Product]
+        // arrayList[index].set = true
+        arrayList.map((val, id) => id == index ? val.set = true : val.set = false)
         setArray(arrayList)
-        
-        
+
+
     }
     return (
 
@@ -32,14 +32,14 @@ const ProductSilder = () => {
             contentContainerStyle={styles.parent}
             horizontal={true}
             data={arrayData}
-            renderItem={({ item ,index}) => (<TouchableOpacity
-                 onPress={() => onClick(index)} 
-                style={[{ height: screenWidth/2.8,  }, item.set ? styles.activeItem : styles.notActive]}>
+            renderItem={({ item, index }) => (<TouchableOpacity
+                onPress={() => onClick(index)}
+                style={[{ height: screenWidth / 2.8, }, item.set ? styles.activeItem : styles.notActive]}>
                 <Image
                     resizeMethod="resize"
                     resizeMode="cover"
                     source={item.img}
-                    style={{ height: screenWidth/3, width:screenWidth/3, borderRadius: 10 }}
+                    style={{ height: screenWidth / 3, width: screenWidth / 3, borderRadius: 10 }}
                 />
                 {item.set && <Text style={styles.text}>Cover</Text>}
             </TouchableOpacity>)}
@@ -53,8 +53,8 @@ export default ProductSilder
 
 const styles = StyleSheet.create({
     parent: {
-        paddingVertical:5
-       // backgroundColor:"red"
+        paddingVertical: 5
+        // backgroundColor:"red"
 
     },
     activeItem: {

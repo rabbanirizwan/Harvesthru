@@ -13,7 +13,7 @@ const DescriptionHeading = styled.Text`
 font-size:14px;
 font-family:Nunito-Bold
 `
-const Description =styled.Text`
+const Description = styled.Text`
 font-size:12px;
 font-family:Nunito-Light
 `
@@ -33,31 +33,31 @@ const PreviewScreenPresenter = () => {
                 style={styles.image}
             />
 
-           <View style={styles.detail}>
-               <View>
-               <Text style={styles.text}>Fuji Apples</Text>
-               <Image
-                resizeMode="contain"
-                resizeMethod="resize"
-                source={require("../../assets/images/organic.png")}
-                style={{
-                    width:screenWidth/5,
-                   height:screenWidth/10,
-                   }}
-               />
-               </View>
-               
-               <Image
-                resizeMode="cover"
-                resizeMethod="resize"
-                source={require("../../assets/images/price.png")}
-                style={{width:screenWidth/3,height:screenWidth/10}}
-               />
-           </View>
-           <View style={styles.desc}>
-               <DescriptionHeading>Description</DescriptionHeading>
-               <Description>Fuji Apples grown in Sally’s backyard. Pesticide-free. 20lbs left until 1/27. Eat fresh or use for baking!</Description>
-           </View>
+            <View style={styles.detail}>
+                <View>
+                    <Text style={styles.text}>Fuji Apples</Text>
+                    <Image
+                        resizeMode="contain"
+                        resizeMethod="resize"
+                        source={require("../../assets/images/organic.png")}
+                        style={{
+                            width: screenWidth / 5,
+                            height: screenWidth / 10,
+                        }}
+                    />
+                </View>
+
+                <Image
+                    resizeMode="cover"
+                    resizeMethod="resize"
+                    source={require("../../assets/images/price.png")}
+                    style={{ width: screenWidth / 3, height: screenWidth / 10 }}
+                />
+            </View>
+            <View style={styles.desc}>
+                <DescriptionHeading>Description</DescriptionHeading>
+                <Description>Fuji Apples grown in Sally’s backyard. Pesticide-free. 20lbs left until 1/27. Eat fresh or use for baking!</Description>
+            </View>
 
         </SafeAreaView>
     )
@@ -66,8 +66,8 @@ const PreviewScreenPresenter = () => {
 export default PreviewScreenPresenter
 
 const styles = StyleSheet.create({
-    desc:{
-        paddingHorizontal:20,
+    desc: {
+        paddingHorizontal: 20,
         marginVertical: 20
     },
     parent: {
@@ -82,17 +82,17 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         marginVertical: 20
     },
-    detail:{
-        flexDirection:"row",
-        justifyContent:"space-between",
-        alignItems:"center",
-        paddingHorizontal:20,
-      
-     
+    detail: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingHorizontal: 20,
+
+
 
     },
-    text:{
-        fontSize:16,
-       fontFamily:"Nunito-ExtraBold"
+    text: {
+        fontSize: 16,
+        fontFamily: "Nunito-ExtraBold"
     }
 })

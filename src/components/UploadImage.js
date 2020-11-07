@@ -39,6 +39,7 @@ const UploadImage = ({navigation}) => {
               // const source = { uri: 'data:image/jpeg;base64,' + response.data };
            
               setImage(source)
+              
             }
           });
     }
@@ -46,17 +47,20 @@ const UploadImage = ({navigation}) => {
 
       console.log(image)
     return (
+      
         <TouchableOpacity
-        onPress={()=>selectImage()}
+        onPress={()=>!image&&selectImage()}
          >
+           
             <Image
                 resizeMethod="resize"
-                resizeMode="contain"
-                source={require("../assets/images/upload.png")}
+                resizeMode={image?"cover":"contain"}
+                source={image?image:require("../assets/images/upload.png")}
                 style={{width:screenWidth/3,height:screenWidth/3,alignSelf:"center"}}
             />
             
         </TouchableOpacity>
+   
     )
 }
 export default UploadImage
